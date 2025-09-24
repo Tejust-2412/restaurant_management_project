@@ -17,6 +17,7 @@ class MenuItem(models.Model):
     name = models.CharField(max_length = 200 )
     description = models.TextField(blank = True , null = True )
     price = models.DecimalField(max_digits = 8 , decimal_places = 2)
+    available = models.BooleanField(default = True)
     category = models.ForeignKey(MenuCategory , on_delete = models.CASCADE , related_name = "items")
 
 
