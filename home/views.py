@@ -8,3 +8,14 @@ from .serializers import MenuCategorySerializer
 class MenuCategoryListView(ListAPIView) :
     queryset = MenuCategory.object.all()
     serializer_clas = MenuCategorySerializer
+
+
+    def get_quertset(self) :
+        queryset = MenuItem.objects.all()
+        query = self.request.query_params.get('q')
+
+        if query :
+            queryset = query.filter(name_icontains = query)
+
+        return queryset.order_by ('name')
+
