@@ -1,10 +1,13 @@
 from rest_framework import serializers 
 from .model import MenuCategory 
-from .model import MenuItem 
+from .model import MenuItem
 
+class MenuItemSeializer(serializers.ModelSerializer) :
+    category = serializers.StringRelatedField()
 
-
-class 
+    class Meta :
+        model :MenuItem 
+        fiekds = ['id' , 'name' , 'desciption' , 'price' , 'available']
 
 
 class MenuCategorySerilizer(serializers.ModelSerializer) :
