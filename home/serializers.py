@@ -1,5 +1,10 @@
 from rest_framework import serializers 
 from .model import MenuCategory 
+from .model import MenuItem 
+
+
+
+class 
 
 
 class MenuCategorySerilizer(serializers.ModelSerializer) :
